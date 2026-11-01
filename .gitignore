@@ -1,0 +1,14 @@
+# Compiled Java files
+*.class
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+
