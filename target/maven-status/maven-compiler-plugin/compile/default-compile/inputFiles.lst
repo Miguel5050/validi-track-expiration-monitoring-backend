@@ -9,6 +9,9 @@ C:\Users\migue\Desktop\validi-track-expiration-monitoring-backend-main\src\main\
 C:\Users\migue\Desktop\validi-track-expiration-monitoring-backend-main\src\main\java\validi_track_expiration_monitoring\domain\Holder.java
 C:\Users\migue\Desktop\validi-track-expiration-monitoring-backend-main\src\main\java\validi_track_expiration_monitoring\domain\Item.java
 C:\Users\migue\Desktop\validi-track-expiration-monitoring-backend-main\src\main\java\validi_track_expiration_monitoring\domain\ValidityStatus.java
+C:\Users\migue\Desktop\validi-track-expiration-monitoring-backend-main\src\main\java\validi_track_expiration_monitoring\exception\ErrorResponse.java
+C:\Users\migue\Desktop\validi-track-expiration-monitoring-backend-main\src\main\java\validi_track_expiration_monitoring\exception\GlobalExceptionHandler.java
+C:\Users\migue\Desktop\validi-track-expiration-monitoring-backend-main\src\main\java\validi_track_expiration_monitoring\exception\ResourceNotFoundException.java
 C:\Users\migue\Desktop\validi-track-expiration-monitoring-backend-main\src\main\java\validi_track_expiration_monitoring\repository\BranchRepository.java
 C:\Users\migue\Desktop\validi-track-expiration-monitoring-backend-main\src\main\java\validi_track_expiration_monitoring\repository\ComplianceOfficerRepository.java
 C:\Users\migue\Desktop\validi-track-expiration-monitoring-backend-main\src\main\java\validi_track_expiration_monitoring\repository\DocumentTypeRepository.java

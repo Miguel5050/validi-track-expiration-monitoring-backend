@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: validi_track_expiration_monitoring.ValidiTrackExpirationMonitoringApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 69.40 s -- in validi_track_expiration_monitoring.ValidiTrackExpirationMonitoringApplicationTests

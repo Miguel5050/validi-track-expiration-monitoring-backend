@@ -7,6 +7,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -16,12 +18,17 @@ public class Item {
     @GeneratedValue
     private UUID id;
 
+    @NotNull(message = "Expiry date is required")
     private LocalDate expiryDate;
 
+    @NotNull(message = "Status is required")
     @Enumerated(EnumType.STRING)
     private ValidityStatus status;
 
+    @NotBlank(message = "Item name is required")
     private String itemName;
+
+    @NotBlank(message = "Issuer is required")
     private String issuer;
 
     @ManyToOne

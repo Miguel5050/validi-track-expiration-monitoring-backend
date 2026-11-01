@@ -1,0 +1,452 @@
+{
+  "info": {
+    "name": "Validi-Track API",
+    "description": "Production-ready Postman collection for the Validi-Track Spring Boot backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8082", "type": "string" },
+    { "key": "branchId", "value": "8d1be639-18f5-4ee6-9ded-3908cdfe49a4", "type": "string" },
+    { "key": "branchIdAlt", "value": "f0155f4b-f967-47ae-b32d-0c445827b24a", "type": "string" },
+    { "key": "complianceOfficerId", "value": "1e68c365-9a9c-482f-bb40-3f53f089fc39", "type": "string" },
+    { "key": "complianceOfficerIdAlt", "value": "ea79dd91-8cb3-46c4-a8b0-016359f1249d", "type": "string" },
+    { "key": "holderId", "value": "baaba404-cf22-49fd-8b96-b94e01839eda", "type": "string" },
+    { "key": "holderIdAlt", "value": "9ca8d26e-9a8d-4d0a-b773-0b619c243141", "type": "string" },
+    { "key": "documentTypeId", "value": "76ae4873-c249-4888-a3d5-3d83e7220f93", "type": "string" },
+    { "key": "documentTypeIdAlt", "value": "7d50d58a-3ae2-4f47-9b50-f614336efe27", "type": "string" },
+    { "key": "itemId", "value": "db68d031-efe9-41f3-b52b-30e3bc934655", "type": "string" },
+    { "key": "itemIdAlt", "value": "48fde70e-a665-422a-b21a-0d453916b961", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Core CRUD",
+      "item": [
+        {
+          "name": "Branch - POST save",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"branchNumber\": 99,\n  \"name\": \"Test Branch\"\n}"
+            },
+            "url": "{{baseUrl}}/api/branches/save"
+          }
+        },
+        {
+          "name": "Branch - GET all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/branches/all"
+          }
+        },
+        {
+          "name": "Branch - GET by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/branches/{{branchId}}"
+          }
+        },
+        {
+          "name": "Branch - PUT update by ID",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"branchNumber\": 1,\n  \"name\": \"Kigali Main Branch Updated\"\n}"
+            },
+            "url": "{{baseUrl}}/api/branches/update/{{branchId}}"
+          }
+        },
+        {
+          "name": "Branch - DELETE by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/branches/delete/{{branchIdAlt}}"
+          }
+        },
+        {
+          "name": "Compliance Officer - POST save",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Grace\",\n  \"lastName\": \"Mutesa\",\n  \"email\": \"grace.mutesa@validi.rw\",\n  \"branch\": {\n    \"id\": \"{{branchId}}\"\n  },\n  \"documentTypes\": [\n    {\n      \"id\": \"{{documentTypeId}}\"\n    }\n  ]\n}"
+            },
+            "url": "{{baseUrl}}/api/compliance-officers/save"
+          }
+        },
+        {
+          "name": "Compliance Officer - GET all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/compliance-officers/all"
+          }
+        },
+        {
+          "name": "Compliance Officer - GET by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/compliance-officers/{{complianceOfficerId}}"
+          }
+        },
+        {
+          "name": "Compliance Officer - PUT update by ID",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Alice\",\n  \"lastName\": \"Uwase\",\n  \"email\": \"alice.uwase@validi.rw\",\n  \"branch\": {\n    \"id\": \"{{branchId}}\"\n  },\n  \"documentTypes\": [\n    {\n      \"id\": \"{{documentTypeId}}\"\n    },\n    {\n      \"id\": \"{{documentTypeIdAlt}}\"\n    }\n  ]\n}"
+            },
+            "url": "{{baseUrl}}/api/compliance-officers/update/{{complianceOfficerId}}"
+          }
+        },
+        {
+          "name": "Compliance Officer - DELETE by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/compliance-officers/delete/{{complianceOfficerIdAlt}}"
+          }
+        },
+        {
+          "name": "Holder - POST save",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Emmanuel\",\n  \"lastName\": \"Ndayisaba\",\n  \"holderCode\": \"HLD-0105\",\n  \"organisation\": \"MTN\",\n  \"email\": \"emmanuel.ndayisaba@mtn.co.rw\",\n  \"branch\": {\n    \"id\": \"{{branchId}}\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/holders/save"
+          }
+        },
+        {
+          "name": "Holder - GET all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/holders/all"
+          }
+        },
+        {
+          "name": "Holder - GET by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/holders/{{holderId}}"
+          }
+        },
+        {
+          "name": "Holder - PUT update by ID",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Tristan\",\n  \"lastName\": \"Mihigo\",\n  \"holderCode\": \"HLD-0056\",\n  \"organisation\": \"BK\",\n  \"email\": \"tristan.mihigo@bk.rw\",\n  \"branch\": {\n    \"id\": \"{{branchId}}\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/holders/update/{{holderId}}"
+          }
+        },
+        {
+          "name": "Holder - DELETE by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/holders/delete/{{holderIdAlt}}"
+          }
+        },
+        {
+          "name": "Document Type - POST save",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Permit\"\n}"
+            },
+            "url": "{{baseUrl}}/api/document-types/save"
+          }
+        },
+        {
+          "name": "Document Type - GET all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/document-types/all"
+          }
+        },
+        {
+          "name": "Document Type - GET by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/document-types/{{documentTypeId}}"
+          }
+        },
+        {
+          "name": "Document Type - PUT update by ID",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Licence Updated\"\n}"
+            },
+            "url": "{{baseUrl}}/api/document-types/update/{{documentTypeId}}"
+          }
+        },
+        {
+          "name": "Document Type - DELETE by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/document-types/delete/{{documentTypeIdAlt}}"
+          }
+        },
+        {
+          "name": "Item - POST save",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expiryDate\": \"2026-12-31\",\n  \"status\": \"VALID\",\n  \"itemName\": \"Insurance Policy\",\n  \"issuer\": \"RRA\",\n  \"holder\": {\n    \"id\": \"{{holderId}}\"\n  },\n  \"complianceOfficer\": {\n    \"id\": \"{{complianceOfficerId}}\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/items/save"
+          }
+        },
+        {
+          "name": "Item - GET all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/all"
+          }
+        },
+        {
+          "name": "Item - GET by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/{{itemId}}"
+          }
+        },
+        {
+          "name": "Item - PUT update by ID",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expiryDate\": \"2026-12-15\",\n  \"status\": \"EXPIRING_SOON\",\n  \"itemName\": \"Driver Licence\",\n  \"issuer\": \"RNP\",\n  \"holder\": {\n    \"id\": \"{{holderId}}\"\n  },\n  \"complianceOfficer\": {\n    \"id\": \"{{complianceOfficerId}}\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/items/update/{{itemId}}"
+          }
+        },
+        {
+          "name": "Item - DELETE by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/delete/{{itemIdAlt}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Derived Queries (Part B)",
+      "item": [
+        {
+          "name": "Item - GET by status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/status/VALID"
+          }
+        },
+        {
+          "name": "Item - GET by status (EXPIRED)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/status/EXPIRED"
+          }
+        },
+        {
+          "name": "Item - GET by date range",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/date-range?startDate=2026-10-01&endDate=2026-10-31"
+          }
+        },
+        {
+          "name": "Item - GET by compliance officer and expiry date",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/compliance-officer/{{complianceOfficerId}}/expiry-date/2026-10-20"
+          }
+        },
+        {
+          "name": "Item - GET by branch ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/branch/{{branchId}}"
+          }
+        },
+        {
+          "name": "Item - GET expired items by officer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/officer/{{complianceOfficerId}}/expired"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Custom JPQL & Aggregations (Part C)",
+      "item": [
+        {
+          "name": "Item - COUNT by status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/count?status=VALID"
+          }
+        },
+        {
+          "name": "Item - COUNT by status (EXPIRED)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/count?status=EXPIRED"
+          }
+        },
+        {
+          "name": "Item - Custom branch query",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/branch/{{branchId}}"
+          }
+        },
+        {
+          "name": "Item - Custom expired-by-officer query",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/officer/{{complianceOfficerId}}/expired"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Exception Handling / Validation Tests (Part D)",
+      "item": [
+        {
+          "name": "Item - Validation error on save",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"expiryDate\": \"2026-12-31\",\n  \"status\": \"VALID\",\n  \"issuer\": \"RRA\",\n  \"holder\": {\n    \"id\": \"{{holderId}}\"\n  },\n  \"complianceOfficer\": {\n    \"id\": \"{{complianceOfficerId}}\"\n  }\n}"
+            },
+            "url": "{{baseUrl}}/api/items/save"
+          }
+        },
+        {
+          "name": "Item - Not found by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/11111111-1111-4111-8111-111111111111"
+          }
+        },
+        {
+          "name": "Item - Invalid date range order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/date-range?startDate=2026-12-15&endDate=2026-10-01"
+          }
+        },
+        {
+          "name": "Item - Invalid enum status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/items/status/INVALID"
+          }
+        },
+        {
+          "name": "Branch - Not found by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/branches/11111111-1111-4111-8111-111111111111"
+          }
+        },
+        {
+          "name": "Compliance Officer - Not found by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/compliance-officers/11111111-1111-4111-8111-111111111111"
+          }
+        },
+        {
+          "name": "Holder - Not found by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/holders/11111111-1111-4111-8111-111111111111"
+          }
+        },
+        {
+          "name": "Document Type - Not found by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/document-types/11111111-1111-4111-8111-111111111111"
+          }
+        }
+      ]
+    }
+  ]
+}
